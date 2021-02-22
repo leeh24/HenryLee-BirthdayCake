@@ -33,6 +33,9 @@ public class CakeModel {
         this.candlesNum = candlesNum;
     }
 
+    public boolean isCandles(){return isCandles;}
+
+    public void setIsCandles(boolean isCandles){this.isCandles = isCandles;}
 
     
 }
