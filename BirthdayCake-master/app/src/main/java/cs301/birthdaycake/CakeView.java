@@ -130,28 +130,11 @@ public class CakeView extends SurfaceView {
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, cakePaint);
 
         //Draw 2 candles equidistant from each other
-        if(getCakeModel().isCandles){
+         if(getCakeModel().isCandles) {
             int candleNum = getCakeModel().candlesNum;
-            if(candleNum == 1) {
-                drawCandle(canvas, cakeLeft + cakeWidth/2 - candleWidth/2, cakeTop);
-            } else if (candleNum == 2) {
-                drawCandle(canvas, cakeLeft + cakeWidth/3 - candleWidth/3, cakeTop);
-                drawCandle(canvas, cakeLeft + 2*cakeWidth/3 - 2*candleWidth/3, cakeTop);
-            } else if (candleNum == 3) {
-                drawCandle(canvas, cakeLeft + cakeWidth/4 - candleWidth/4, cakeTop);
-                drawCandle(canvas, cakeLeft + 2*cakeWidth/4 - 2*candleWidth/4, cakeTop);
-                drawCandle(canvas, cakeLeft + 3*cakeWidth/4 - 3*candleWidth/4, cakeTop);
-            } else if (candleNum == 4) {
-                drawCandle(canvas, cakeLeft + cakeWidth/5 - candleWidth/5, cakeTop);
-                drawCandle(canvas, cakeLeft + 2*cakeWidth/5 - 2*candleWidth/5, cakeTop);
-                drawCandle(canvas, cakeLeft + 3*cakeWidth/5 - 3*candleWidth/5, cakeTop);
-                drawCandle(canvas, cakeLeft + 4*cakeWidth/5 - 3*candleWidth/5, cakeTop);
-            } else if (candleNum == 5) {
-                drawCandle(canvas, cakeLeft + cakeWidth/6 - candleWidth/6, cakeTop);
-                drawCandle(canvas, cakeLeft + 2*cakeWidth/6 - 2*candleWidth/6, cakeTop);
-                drawCandle(canvas, cakeLeft + 3*cakeWidth/6 - 3*candleWidth/6, cakeTop);
-                drawCandle(canvas, cakeLeft + 4*cakeWidth/6 - 3*candleWidth/6, cakeTop);
-                drawCandle(canvas, cakeLeft + 5*cakeWidth/6 - 3*candleWidth/6, cakeTop);
+
+            for(int i = 1; i <= candleNum; i++) {
+                drawCandle(canvas, cakeLeft + i * cakeWidth/(candleNum + 1) - i * candleWidth/(candleNum + 1), cakeTop);
             }
 
         }
